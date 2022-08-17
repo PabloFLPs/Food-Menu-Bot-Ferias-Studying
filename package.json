@@ -1,0 +1,8 @@
+{
+  "name": "bot-ferias-cardapio",
+  "version": "1.0.0",
+  "description": "Just a simple study project to implement 'cardapio' feature in our Vacation Bot on Twitter.",
+  "main": "index.js",
+  "author": "PabloFLPs",
+  "license": "MIT"
+}
