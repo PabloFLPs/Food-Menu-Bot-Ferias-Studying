@@ -6,6 +6,10 @@
   "author": "PabloFLPs",
   "license": "MIT",
   "dependencies": {
+    "nodemon": "^2.0.19",
     "xlsx": "^0.18.5"
+  },
+  "scripts": {
+    "dev": "nodemon src"
   }
 }
