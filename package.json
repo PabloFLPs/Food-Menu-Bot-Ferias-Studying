@@ -4,5 +4,8 @@
   "description": "Just a simple study project to implement 'cardapio' feature in our Vacation Bot on Twitter.",
   "main": "index.js",
   "author": "PabloFLPs",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
 }
