@@ -30,13 +30,16 @@ const parseExcel = (fileName) => {
     }))
 }
 
+// This is the offset to get our current day in the .xls file:
+let currentXlsDay = currentDay - 3
+
 parseExcel("./files/Cardápio-AGOSTO.xlsx").forEach(element => {
     
     console.log(
         "Data: " +
-        //element.data[5]["__EMPTY"], // day name
-        //element.data[14][`${currentMonth}`][0] + // day
-        element.data[currentDay - 3][`${currentMonth}`] + // day
+        element.data[currentXlsDay]["__EMPTY"] + // day name
+        ", " +
+        element.data[currentXlsDay][`${currentMonth}`] + // day
         " de " +
         `${currentMonth}`[0] + `${currentMonth}`.toLowerCase().slice(1) // month
     )
@@ -45,28 +48,26 @@ parseExcel("./files/Cardápio-AGOSTO.xlsx").forEach(element => {
     // exampleString.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
 
     console.log(
-        "Cardápio: " +
+        "- CARDÁPIO - " +
         "\n" +
-        "Principal: " + element.data[currentDay - 3]["__EMPTY_1"] + " e " + element.data[currentDay - 3]["__EMPTY_2"] +
+        "Principal: " + element.data[currentXlsDay]["__EMPTY_1"] + " e " + element.data[currentXlsDay]["__EMPTY_2"] +
         "\n" +
-        "Prato Protéico: " + element.data[currentDay - 3]["__EMPTY_3"] +
+        "Prato Protéico: " + element.data[currentXlsDay]["__EMPTY_3"] +
         "\n" +
-        "Vegetariana: " + element.data[currentDay - 3]["__EMPTY_4"] +
+        "Vegetariana: " + element.data[currentXlsDay]["__EMPTY_4"] +
         "\n" +
-        "Vegana: " + element.data[currentDay - 3]["__EMPTY_currentDay - 3"] +
+        "Vegana: " + element.data[currentXlsDay]["__EMPTY_5"] +
         "\n" +
-        "Guarnição: " + element.data[currentDay - 3]["__EMPTY_6"] + 
+        "Guarnição: " + element.data[currentXlsDay]["__EMPTY_6"] + 
         "\n" +
-        "Salada - Folhas: " + element.data[currentDay - 3]["__EMPTY_7"] +
+        "Salada - Folhas: " + element.data[currentXlsDay]["__EMPTY_7"] +
         "\n" +
-        "Salada - Legumes/Acompanhamentos: " + element.data[currentDay - 3]["__EMPTY_8"] +
+        "Salada - Legumes/Acompanhamentos: " + element.data[currentXlsDay]["__EMPTY_8"] +
         "\n" +
-        "Salada - Cozidos: " + element.data[currentDay - 3]["__EMPTY_9"] +
+        "Salada - Cozidos: " + element.data[currentXlsDay]["__EMPTY_9"] +
         "\n" +
-        "Salada - Composta: " + element.data[currentDay - 3]["__EMPTY_10"] +
+        "Salada - Composta: " + element.data[currentXlsDay]["__EMPTY_10"] +
         "\n" +
-        "Sobremesa: " + element.data[currentDay - 3]["__EMPTY_11"]
+        "Sobremesa: " + element.data[currentXlsDay]["__EMPTY_11"]
     )
-
-    //console.log(element.data[14])
 })
