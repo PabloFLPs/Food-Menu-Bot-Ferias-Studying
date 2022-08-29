@@ -43,6 +43,8 @@ parseExcel(`./files/Cardápio-${currentMonth}.xlsx`).forEach(element => {
         dayName = element.data[currentXlsDay][`${currentMonth}`].slice(1).replace(/ /g, "") // setting correct dayName by treating the data
     }
 
+    if (day != currentDay) day = currentDay // fixing possible wrong day in menu .xls file
+
     // Here we verify if the last item from the menu is a valid item; if it is, we continue to show the menu:
     if ((element.data[currentXlsDay]["__EMPTY_11"])){
         console.log(
